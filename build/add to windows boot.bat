@@ -28,5 +28,6 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------  
-echo cd %CD% > "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\rz_console_startup.bat"
-echo start javaw -Xmx200m -jar "%CD%\build.jar" "startup" >> "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\rz_console_startup.bat"
+echo @echo off > "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\simple_console_startup.bat"
+echo cd %CD% >> "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\simple_console_startup.bat"
+echo start javaw -Xmx200m -jar "%CD%\build.jar" "startup" >> "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\simple_console_startup.bat"
