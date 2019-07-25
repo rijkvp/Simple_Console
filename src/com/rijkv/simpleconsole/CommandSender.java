@@ -127,6 +127,9 @@ public class CommandSender {
 				Console.print("INVALID SYNTAX!");
 			}
 		}
+		else if (args[0].equalsIgnoreCase("hide")) {
+			Actions.hideWindow();
+		}
 		else {
 			Console.print("Unknown command! Check your syntax!");
 		}

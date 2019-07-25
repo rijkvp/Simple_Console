@@ -62,7 +62,7 @@ public class Actions {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static boolean openWebpage(java.net.URI uri) {
 	    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
 	    if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
@@ -87,6 +87,11 @@ public class Actions {
 
 	
 	// OTHER ACTIONS
+	
+	public static void hideWindow()
+	{
+		Console.hideFrame();
+	}
 	
 	public static void runCMDCommand(String command)
 	{

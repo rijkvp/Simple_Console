@@ -29,9 +29,9 @@ public class Console {
 	static JTextField inputField = new JTextField("");
 	
 	static String FONT_NAME = "Consolas";
+	static JFrame frame = new JFrame();
 	
 	public Console() {
-		JFrame frame = new JFrame();
 		JPanel middlePanel = new JPanel ();
 		
 		middlePanel.setLayout(new BorderLayout());
@@ -92,15 +92,23 @@ public class Console {
 	{
 		ta.setText(ta.getText() + "\n" + text);
 	}
+	
 	public static void clear()
 	{
 		ta.setText("");
 	}
+	
 	public static void logCommand(String command)
 	{
 		if (ta.getText().equalsIgnoreCase(""))
     		ta.setText(">>> " + command);
     	else
     		ta.setText(ta.getText() + "\n" + ">>> " + command);
+	}
+	
+	@SuppressWarnings("deprecation")
+	public static void hideFrame()
+	{
+		frame.hide();
 	}
 }
