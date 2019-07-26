@@ -1,10 +1,6 @@
 package com.rijkv.simpleconsole;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class FileLoader {
 
@@ -25,6 +21,27 @@ public class FileLoader {
 			System.out.println("IO EXCEPTION!!");
 			e.printStackTrace();
 			return;
+		}
+	}
+	
+	public static void DisplayFileList()
+	{
+		File dir = new File("./actions/");
+		File [] files = dir.listFiles(new FilenameFilter() {
+		    @Override
+		    public boolean accept(File dir, String name) {
+		        return name.endsWith(".ini");
+		    }
+		});
+		if (files != null)
+		{
+			for (File file : files) {
+			    Console.print(file.getName());
+			}
+		}
+		else
+		{
+			Console.print("No actions found.");
 		}
 	}
 }

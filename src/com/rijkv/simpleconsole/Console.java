@@ -14,8 +14,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
 
 public class Console {
 	
@@ -60,7 +58,8 @@ public class Console {
         middlePanel.add(scroll);
         
         
-        Action action = new AbstractAction()
+        @SuppressWarnings("serial")
+		Action action = new AbstractAction()
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -72,12 +71,6 @@ public class Console {
         };
         inputField.addActionListener(action);
         middlePanel.add(inputField, BorderLayout.SOUTH);
-        
-        
-      //  TitledBorder border = new TitledBorder(new EtchedBorder(), "CONSOLE");
-      //  border.setTitleFont(font);
-      //  border.setTitleColor(Color.WHITE);
-       // middlePanel.setBorder(border);
         
         middlePanel.setBorder(emptyBorder);
         

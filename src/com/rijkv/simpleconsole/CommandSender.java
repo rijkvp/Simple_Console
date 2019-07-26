@@ -120,7 +120,14 @@ public class CommandSender {
 		else if (args[0].equalsIgnoreCase("action")) {
 			if (args.length == 2)
 			{
-				FileLoader.LoadFile(args[1]);
+				if (args[1].equalsIgnoreCase("list"))
+				{
+					FileLoader.DisplayFileList();
+				}
+				else
+				{
+					FileLoader.LoadFile(args[1]);
+				}
 			} 
 			else
 			{
